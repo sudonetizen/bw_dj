@@ -1,0 +1,54 @@
+head {
+    background-color: #190B28; 
+    color: #6DD8A6;
+}
+
+body { 
+    background-color: #190B28;
+    color: #6DD8A6;
+
+    font-family: monospace, sans-serif;
+    font-size: 18px;
+}
+
+header {
+    border-bottom: 2px dashed #CEFF1A;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+h2 a {
+    color: #CEFF1A;
+}
+
+header h1 a {
+    color: #6DD8A6;
+    text-decoration: none;
+}
+
+.nav-left {
+    margin-right: auto;
+}
+
+.nav-right {
+    display: flex;
+    padding-top: 2rem;
+}
+
+.post-entry {
+    margin-bottom: 2rem;
+}
+
+.post-entry h2 {
+    margin: 0.5rem 0;
+}
+
+.post-entry h2 a,
+.post-entry h2 a:visited {
+    text-decoration: none;
+}
+
+.post-entry p {
+    margin: 0;
+    font-weight: 400;
+}
