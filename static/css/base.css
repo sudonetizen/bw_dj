@@ -9,6 +9,7 @@ body {
 
     font-family: monospace, sans-serif;
     font-size: 18px;
+    text-decoration: none;
 }
 
 header {
@@ -23,6 +24,16 @@ h2 a {
 
 header h1 a {
     color: #6DD8A6;
+    text-decoration: none;
+}
+
+body a {
+    color: #CEFF1A;
+    text-decoration: none;
+}
+
+.nav-right a {
+    color: #CEFF1A;
     text-decoration: none;
 }
 
