@@ -17,6 +17,7 @@ class BlogTests(TestCase):
             author=cls.user,
         )
 
+
     def test_post_model(self):
         self.assertEqual(self.post.title, "A good title")
         self.assertEqual(self.post.body, "Nice body content")
@@ -48,6 +49,9 @@ class BlogTests(TestCase):
         self.assertEqual(bad_response.status_code, 404)
 
     def test_post_createview(self):
+        logged = self.client.login(username="testuser", password="secret")
+        self.assertTrue(logged)
+
         response = self.client.post(
             reverse("post_new"),
             {
@@ -56,6 +60,7 @@ class BlogTests(TestCase):
                 "author": self.user.id,
             },
         )
+
         self.assertEqual(response.status_code, 302)
         self.assertEqual(Post.objects.last().title, "New title")
         self.assertEqual(Post.objects.last().body, "New text")
@@ -64,6 +69,9 @@ class BlogTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_post_updateview(self):
+        logged = self.client.login(username="testuser", password="secret")
+        self.assertTrue(logged)
+
         response = self.client.post(
             reverse("post_edit", args="1"),
             {
@@ -76,6 +84,9 @@ class BlogTests(TestCase):
         self.assertEqual(Post.objects.last().body, "Updated text")
 
     def test_post_deleteview(self):
+        logged = self.client.login(username="testuser", password="secret")
+        self.assertTrue(logged)
+
         response = self.client.post(reverse("post_delete", args="1"))
         self.assertEqual(response.status_code, 302)
 
